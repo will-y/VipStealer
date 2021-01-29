@@ -35,8 +35,11 @@ li {
     padding: 0.375rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
-    border: 1px solid #ced4da;
+    border: 1px solid #1d2329;
     border-radius: .25rem;
+    background-color: #282D33;
+    color: #b0b0b0;
+    margin-bottom: 10px;
 }
 
 .form-container {
@@ -54,4 +57,24 @@ li {
     transform: rotate(-90deg);
     text-align: left;
     padding-left: 83px;
+}
+
+.arrow-wrapper {
+    width: 100%;
+    text-align: center;
+    font-size: 80px;
+}
+
+body {
+    background-color: #36393E
+}
+
+#spin {
+    margin-bottom:  10px;
+}
+
+button {
+    background-color: #282D33;
+    color: #b0b0b0;
+    border-color: #2e353b;
 }

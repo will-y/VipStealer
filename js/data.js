@@ -1,4 +1,5 @@
 require('jquery-ui-dist/jquery-ui')
+const fs = require("fs");
 let currentData
 
 $.fn.animateRotate = function(angle, duration, easing, complete) {
@@ -25,17 +26,10 @@ $(document).ready(function() {
             "color": $("#color").val()
         })
         reload()
+        saveJSON()
     })
-
     $("#spin").click(function() {
         spin($(".circle"))
-    })
-})
-
-$(function () {
-    $.getJSON('data/data.json', function(data) {
-        currentData = data
-        reload()
     })
 })
 
@@ -70,3 +64,14 @@ function spin(element) {
         alert(currentData[selection].text)
     })
 }
+
+function saveJSON() {
+    fs.writeFileSync('data/data.json', JSON.stringify(currentData))
+}
+
+$(function () {
+    $.getJSON('data/data.json', function(data) {
+        currentData = data
+        reload()
+    })
+})
